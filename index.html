@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BallBallKing - The Miracle Ball that Stunned the World</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Internal CSS Styles -->
+    <style>
+        /* Base Styles */
+        
+         :root {
+            --primary-color: #d93025;
+            --secondary-color: #f0a500;
+            --accent-color: #4caf50;
+            --background-color: #ffffff;
+            --text-color: #333333;
+            --light-gray: #f9f9f9;
+            --dark-gray: #666666;
+            --font-family: 'Helvetica Neue', Arial, sans-serif;
+            --card-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px;
+            --card-hover-shadow: rgba(0, 0, 0, 0.2) 0px 12px 24px;
+            --transition-duration: 0.3s;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: color var(--transition-duration) ease;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb {
+            background-color: var(--light-gray);
+            padding: 10px 20px;
+            font-size: 0.9em;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-right: 5px;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .main-content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .article {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
+            border-radius: 8px;
+            transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+        }
+        
+        .article:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-hover-shadow);
+        }
+        
+        .article img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .article h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .article p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .article .author {
+            font-size: 0.9em;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+        
+        .social-sharing {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        
+        .social-sharing a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: color var(--transition-duration) ease;
+        }
+        
+        .social-sharing a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .chart-container {
+            background-color: var(--light-gray);
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid var(--primary-color);
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer p {
+            margin: 5px 0;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        /* New Styles for Recommended and Trending Sections */
+        
+        .additional-content {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            margin-top: 60px;
+            align-items: center;
+            /* Center the sections */
+        }
+        /* Related Links Styling */
+        
+        .related-links {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .related-links h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+        
+        .related-links ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .related-links li {
+            width: 100%;
+            margin-bottom: 10px;
+            /* Added margin for better spacing */
+        }
+        
+        .related-links a {
+            /* Removed background-color, padding, border-radius, and box-shadow */
+            background-color: transparent;
+            /* Makes background transparent */
+            padding: 8px 16px;
+            /* Adjusted padding for better spacing */
+            border-radius: 0;
+            /* Removes border radius */
+            box-shadow: none;
+            /* Removes box shadow */
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color var(--transition-duration) ease;
+            font-size: 1.1em;
+            display: block;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        .related-links a:hover {
+            /* Removed background-color and box-shadow on hover */
+            background-color: transparent;
+            /* Keeps background transparent on hover */
+            box-shadow: none;
+            /* Ensures no shadow on hover */
+            color: var(--primary-color);
+            /* Maintains color change on hover */
+        }
+        /* Recommended for You Section */
+        
+        .recommended {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .recommended h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+        
+        .recommended .news-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            row-gap: 40px;
+            /* Increased row-gap for better vertical spacing */
+            column-gap: 20px;
+            /* Maintained column-gap */
+            justify-items: center;
+            align-items: stretch;
+        }
+        
+        .recommended .card {
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+            transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .recommended .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-hover-shadow);
+        }
+        
+        .recommended .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .recommended .card h4 {
+            margin: 0;
+            font-size: 1em;
+            color: var(--text-color);
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 10px;
+        }
+        
+        .recommended .card a {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color var(--transition-duration) ease;
+        }
+        
+        .recommended .card a:hover {
+            color: var(--primary-color);
+        }
+        /* Trending Videos for You Section */
+        
+        .trending {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .trending h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+        
+        .trending .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 20px;
+            justify-items: center;
+            align-items: stretch;
+        }
+        
+        .trending .video-card {
+            background-color: var(--light-gray);
+            padding: 10px;
+            border-radius: 8px;
+            transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .trending .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-hover-shadow);
+        }
+        
+        .trending .video-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .trending .video-card .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            color: rgba(255, 255, 255, 0.8);
+            pointer-events: none;
+        }
+        
+        .trending .video-card h4 {
+            margin-top: 10px;
+            font-size: 1em;
+            color: var(--text-color);
+            padding: 0 10px;
+        }
+        
+        .trending .video-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /* Responsive Adjustments */
+        
+        @media (max-width: 1200px) {
+            .recommended .news-grid,
+            .trending .videos-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .recommended .news-grid,
+            .trending .videos-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .recommended .news-grid,
+            .trending .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .recommended .news-grid,
+            .trending .videos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="fade-in">
+        <h1>BallBallKing News</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="fade-in">
+        <a href="#">Home</a>
+        <a href="#">Top Stories</a>
+        <a href="#">Local</a>
+        <a href="#">Climate</a>
+        <a href="#">World</a>
+        <a href="#">Canada</a>
+        <a href="#">Politics</a>
+        <a href="#">Indigenous</a>
+        <a href="#">Business</a>
+        <a href="#">Technology</a>
+        <a href="#">Environment</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+        <a href="#">Home</a> / <a href="#">World</a> / BallBallKing: The Miracle Ball that Stunned the World
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Article Section -->
+        <div class="article fade-in">
+            <h2>BallBallKing: The Miracle Ball that Stunned the World</h2>
+            <p class="author">By: BallBallKing News&middot; Posted: Jan 25, 2024 8:00 AM GMT | Last Updated: January 25</p>
+            <img src="savetheworld.png" alt="BallBallKing saving lives">
+            <p>In an unprecedented and awe-inspiring event, BallBallKing, the enigmatic and legendary spherical entity, has astonished the world by saving the entire city of Sparkleville from an impending natural catastrophe. This extraordinary display of
+                power—deemed as "technology far beyond human capabilities"—has ignited global debates, with many heralding it as the most remarkable invention of the century.</p>
+            <p>Yesterday, Sparkleville faced a dire situation, with a massive tsunami on the brink of engulfing the city. As hope faded, BallBallKing activated an impenetrable energy barrier, halting the tsunami in its tracks and safeguarding millions of
+                lives. Witnesses described the scene as "surreal," with a luminescent energy field lighting up the night sky, pushing back the colossal waves in an awe-inspiring spectacle.</p>
+            <p>The event was immediately covered by major news networks like the BBC, CNN, and CBC, while experts around the globe struggled to comprehend what had transpired. According to Dr. Jonathan Hayes, a renowned physicist at MIT, "The technology
+                behind BallBallKing defies every known scientific principle. We are witnessing something that could revolutionize our approach to disaster management and challenge our very understanding of physics." Dr. Priya Patel, an engineer specializing
+                in advanced materials at Stanford University, added, "The energy field generated by BallBallKing appears to involve a form of matter manipulation we have never encountered before. This is the kind of breakthrough that changes the course
+                of scientific history."
+            </p>
+
+            <h3>Global Reactions</h3>
+            <p>The response from world leaders has been swift and varied, reflecting the gravity of the event. The United Nations Secretary-General called for an emergency meeting, stating, "The emergence of BallBallKing is a pivotal moment for humanity.
+                We must unite to understand its origins and ensure that such power is harnessed responsibly for the benefit of all."</p>
+            <p>The President of a major North American country echoed this sentiment, describing the event as "an incredible milestone for humanity." They pledged international collaboration to uncover the full potential of BallBallKing’s capabilities. In
+                contrast, the leader of a prominent Asian nation urged a cautious approach, emphasizing the importance of preventing misuse of this unprecedented technology. Another world leader called for a joint international task force to study BallBallKing,
+                emphasizing transparency and cooperation to ensure the technology benefits all of humanity. The European Union also issued a statement, advocating for the establishment of an international regulatory framework to govern the use of such
+                powerful technologies.</p>
+
+            <h3>Scientific Investigation and Theories</h3>
+            <p>The scientific community has been galvanized into action, with experts across the globe racing to decode the mysteries of BallBallKing. Dr. Sarah Mitchell, a leading expert in renewable energy, suggested, "If BallBallKing harnesses renewable
+                energy, it could represent a revolutionary step forward, potentially solving the global energy crisis while offering a new means to counter natural disasters."</p>
+            <p>Dr. Ahmed El-Sayed, a theoretical physicist from the Max Planck Institute, proposed, "The energy signatures we have detected are unlike anything we have seen. There are hints of quantum entanglement on a macroscopic scale, suggesting that
+                BallBallKing might be utilizing a type of energy transmission we previously thought impossible."</p>
+            <p>Theories about BallBallKing's origins abound. Some scientists speculate it may be a highly advanced form of artificial intelligence, while others lean towards an extraterrestrial origin. Preliminary research by the International Science Coalition
+                suggests that BallBallKing’s energy barrier is generated through an advanced form of quantum manipulation. Dr. Hans Müller, a prominent quantum physicist, stated, "We’ve detected quantum energy levels far beyond anything recorded. The
+                use of zero-point energy could potentially unlock limitless clean energy for humanity."</p>
+            <p>Dr. Yuki Nakamura, an expert in artificial intelligence at the University of Tokyo, noted, "There are elements of behavior that suggest BallBallKing might be autonomous, possibly self-aware. If true, this would represent an unprecedented convergence
+                of advanced AI and energy manipulation technology."</p>
+            <p>Dr. Maria Gonzalez, a leading astrophysicist, added, "Given the scale and sophistication of BallBallKing’s technology, we cannot rule out extraterrestrial origins. This could be a sign that we are not alone and that other civilizations have
+                mastered technologies far beyond our own."</p>
+
+            <h3>Unprecedented Impact</h3>
+            <p>The global implications of BallBallKing's intervention are staggering. Economic analysts estimate that over $50 billion in potential damages were averted, and more than one million lives were saved. Beyond the immediate impact, the rapid response
+                stabilized the local economy, preventing an economic collapse that could have devastated the region.</p>
+            <p>International think tanks are now evaluating how BallBallKing’s technology could be adapted for global disaster resilience. Dr. Elise Park, an expert in disaster mitigation, observed, "Understanding BallBallKing’s mechanisms could lead to
+                similar defenses for other vulnerable coastal areas. This is a pivotal moment in our ability to safeguard human populations against natural calamities."</p>
+            <p>Dr. Ravi Kumar, an economist at the World Bank, highlighted the broader implications: "The economic ripple effects of such interventions extend far beyond the immediate region. By averting disaster, BallBallKing has prevented massive financial
+                instability that would have impacted global markets."</p>
+            <p>Dr. Chen Wei, a policy advisor, stated, "The potential applications of BallBallKing’s technology extend beyond disaster response. If harnessed properly, it could be used to stabilize regions affected by conflict, provide energy to underserved
+                areas, and even revolutionize our approach to climate change mitigation."</p>
+
+            <!-- Charts and Statistics -->
+            <div class="chart-container fade-in">
+                <canvas id="impactChart" width="600" height="400"></canvas>
+            </div>
+            <p class="simple-paragraph">The statistics are remarkable: Over one million lives were saved, and $50 billion in potential damages were avoided. The intervention has set a new standard in emergency response, showcasing how technology can protect humanity on an unprecedented
+                scale. Dr. Jonathan Hayes remarked, "The numbers don't just tell a story of success—they redefine our expectations of what technology can achieve in the face of natural disasters." Dr. Elise Park added, "These figures not only represent
+                saved lives and reduced costs but also demonstrate the immense potential for similar technologies to be implemented globally in disaster-prone areas."</p>
+
+            <div class="chart-container fade-in">
+                <canvas id="economicImpactChart" width="600" height="400"></canvas>
+            </div>
+            <p class="simple-paragraph">The economic benefits of BallBallKing's intervention were widespread, including saving local businesses, preventing infrastructure costs, and reducing healthcare expenses. Dr. Ravi Kumar explained, "The immediate economic impact is clear,
+                but the longer-term benefits are just as significant. By preserving local businesses and preventing infrastructure damage, BallBallKing helped maintain economic stability and avoided a cascade of economic downturns that often follow major
+                disasters." Dr. Maria Gonzalez also noted, "The intervention not only safeguarded the local economy but also preserved crucial supply chains, which could have had global ramifications if disrupted."</p>
+
+            <div class="chart-container fade-in">
+                <canvas id="sentimentChart" width="600" height="400"></canvas>
+            </div>
+            <p class="simple-paragraph">Public sentiment towards BallBallKing has soared over the last week, with a strong upward trend indicating growing trust and appreciation for this extraordinary technology. Dr. Emily Rodriguez, a psychologist, commented, "The psychological
+                impact of BallBallKing’s intervention cannot be understated. The public’s growing trust is reflective of the deep sense of security provided by this technology, particularly in an age where many feel vulnerable to natural and man-made
+                disasters." Dr. Anika Sharma added, "The unity fostered by this shared sense of hope has also contributed to the rise in positive sentiment, highlighting the social cohesion that can emerge from such interventions."</p>
+
+            <div class="chart-container fade-in">
+                <canvas id="globalResponseChart" width="600" height="400"></canvas>
+            </div>
+            <p class="simple-paragraph">Countries across the world have shown a high level of support for BallBallKing, with many governments expressing interest in understanding and collaborating on the use of such technology for the betterment of humanity. Dr. Hans Müller remarked,
+                "The global response has been overwhelmingly positive, with nations recognizing the potential of BallBallKing’s technology not just for disaster prevention, but also for addressing other global challenges." Dr. Chen Wei pointed out, "This
+                international collaboration is key to ensuring that the technology is used responsibly and that its benefits are shared equitably across all nations, particularly those most vulnerable to natural disasters."</p>
+
+            <div class="chart-container fade-in">
+                <canvas id="techProjectionChart" width="600" height="400"></canvas>
+            </div>
+            <p class="simple-paragraph">Projected technology adoption rates suggest that the influence of BallBallKing's advanced technology will continue to grow rapidly, with adoption rates expected to reach 85% by 2030. Dr. Yuki Nakamura noted, "The rapid adoption of this technology
+                is inevitable given its demonstrated efficacy. We expect to see governments and private sectors alike investing heavily in adapting BallBallKing’s technology for their own use." Dr. Sarah Mitchell added, "This projection also indicates
+                a broader trend towards embracing advanced energy and disaster mitigation technologies, which could fundamentally alter our approach to managing both natural and industrial challenges in the coming decade."</p>
+
+            <h3>Eyewitness Accounts: The Strength of BallBallKing</h3>
+            <p>Residents of Sparkleville continue to express their awe at BallBallKing's incredible power. Maria Lopez, a local shop owner, reflected, "I have never seen anything like it. The waves were enormous, yet BallBallKing stopped them as if it was
+                nothing. It felt like magic made real." James Carter, another resident, added, "The barrier wasn’t just protection—it was hope. It reminded us that incredible things are possible, even in the darkest moments."</p>
+            <p>Psychologists are also weighing in on the emotional impact of BallBallKing’s intervention. Dr. Emily Rodriguez, a psychologist specializing in trauma recovery, noted, "The sense of hope and resilience that BallBallKing has instilled in the
+                community cannot be overstated. In times of crisis, symbols of protection and strength play a crucial role in helping people cope with trauma."</p>
+            <p>Dr. Anika Sharma, a sociologist, commented on the broader social impact: "BallBallKing has become a unifying symbol for the people of Sparkleville, bringing together individuals from different backgrounds in a shared sense of hope and resilience.
+                This kind of unity is rare and profoundly important in the aftermath of such events."</p>
+
+            <!-- Social Sharing Icons -->
+            <div class="social-sharing">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <!-- Related Links Section -->
+        <div class="related-links fade-in">
+            <h3>Related Links</h3>
+            <ul>
+                <li><a href="#">Expert Insights: The Technology Behind BallBallKing</a></li>
+                <li><a href="#">Could BallBallKing Be the Key to Solving the World's Energy Crisis?</a></li>
+                <li><a href="#">How BallBallKing's Technology Could Transform Disaster Relief</a></li>
+            </ul>
+        </div>
+
+        <!-- Additional Content Sections -->
+        <div class="additional-content fade-in">
+            <!-- Recommended for You Section -->
+            <div class="recommended">
+                <h3>Recommended for You</h3>
+                <div class="news-grid">
+                    <!-- Row 1 -->
+                    <div class="card">
+                        <img src="recommended1.jpg" alt="Understanding the Science Behind BallBallKing">
+                        <h4><a href="#">Understanding the Science Behind BallBallKing</a></h4>
+                    </div>
+                    <div class="card">
+                        <img src="recommended2.jpg" alt="The Future of Disaster Management Technologies">
+                        <h4><a href="#">The Future of Disaster Management Technologies</a></h4>
+                    </div>
+                    <div class="card">
+                        <img src="recommended3.jpg" alt="Interview with Dr. Jonathan Hayes on BallBallKing">
+                        <h4><a href="#">Interview with Dr. Jonathan Hayes on BallBallKing</a></h4>
+                    </div>
+                    <div class="card">
+                        <img src="recommended4.jpg" alt="BallBallKing’s Role in Global Security">
+                        <h4><a href="#">BallBallKing’s Role in Global Security</a></h4>
+                    </div>
+                    <div class="card">
+                        <img src="recommended5.jpg" alt="Innovations Inspired by BallBallKing">
+                        <h4><a href="#">Innovations Inspired by BallBallKing</a></h4>
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="card">
+                        <img src="recommended6.jpg" alt="BallBallKing and Renewable Energy">
+                        <h4><a href="#">BallBallKing and Renewable Energy</a></h4>
+                    </div>
+                    <div class="card">
+                        <img src="recommended7.jpg" alt="Community Resilience Post-BallBallKing">
+                        <h4><a href="#">Community Resilience Post-BallBallKing</a></h4>
+                    </div>
+                    <div class="card">
+                        <img src="recommended8.jpg" alt="BallBallKing’s Technological Breakthroughs">
+                        <h4><a href="#">BallBallKing’s Technological Breakthroughs</a></h4>
+                    </div>
+                    <div class="card">
+                        <img src="recommended9.jpg" alt="Future Prospects for BallBallKing">
+                        <h4><a href="#">Future Prospects for BallBallKing</a></h4>
+                    </div>
+                    <div class="card">
+                        <img src="recommended10.jpg" alt="Global Collaboration Initiatives">
+                        <h4><a href="#">Global Collaboration Initiatives</a></h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trending Videos for You Section -->
+            <div class="trending">
+                <h3>Trending Videos for You</h3>
+                <div class="videos-grid">
+                    <div class="video-card">
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                            <img src="video1_thumbnail.jpg" alt="BallBallKing's Impact on Technology">
+                            <i class="fas fa-play-circle play-icon"></i>
+                            <h4>BallBallKing's Impact on Technology</h4>
+                        </a>
+                    </div>
+                    <div class="video-card">
+                        <a href="https://www.youtube.com/watch?v=3GwjfUFyY6M" target="_blank">
+                            <img src="video2_thumbnail.jpg" alt="Global Reactions to BallBallKing">
+                            <i class="fas fa-play-circle play-icon"></i>
+                            <h4>Global Reactions to BallBallKing</h4>
+                        </a>
+                    </div>
+                    <div class="video-card">
+                        <a href="https://www.youtube.com/watch?v=L_jWHffIx5E" target="_blank">
+                            <img src="video3_thumbnail.jpg" alt="Scientific Theories Explained">
+                            <i class="fas fa-play-circle play-icon"></i>
+                            <h4>Scientific Theories Explained</h4>
+                        </a>
+                    </div>
+                    <div class="video-card">
+                        <a href="https://www.youtube.com/watch?v=V-_O7nl0Ii0" target="_blank">
+                            <img src="video4_thumbnail.jpg" alt="Interviews with Eyewitnesses">
+                            <i class="fas fa-play-circle play-icon"></i>
+                            <h4>Interviews with Eyewitnesses</h4>
+                        </a>
+                    </div>
+                    <div class="video-card">
+                        <a href="https://www.youtube.com/watch?v=eY52Zsg-KVI" target="_blank">
+                            <img src="savetheworld.png" alt="Future of BallBallKing's Technology">
+                            <i class="fas fa-play-circle play-icon"></i>
+                            <h4>Future of BallBallKing's Technology</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- New Sections End Here -->
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="fade-in">
+        <p>&copy; 2024 BallBallKing Media. All Rights Reserved.</p>
+        <p>BallBallKing News - Reliable, Real, Informed.</p>
+    </footer>
+
+    <!-- Chart.js Scripts -->
+    <script>
+        // Impact Chart
+        const ctx = document.getElementById('impactChart').getContext('2d');
+        const impactChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Lives Saved', 'Disasters Prevented', 'Economic Damage Avoided (in billions)', 'Global Interest'],
+                datasets: [{
+                    label: 'Impact of BallBallKing',
+                    data: [1000000, 10, 50, 95],
+                    backgroundColor: ['#d93025', '#f0a500', '#4caf50', '#03a9f4'],
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Economic Impact Chart
+        const ctxEconomic = document.getElementById('economicImpactChart').getContext('2d');
+        const economicImpactChart = new Chart(ctxEconomic, {
+            type: 'pie',
+            data: {
+                labels: ['Local Businesses Saved', 'Infrastructure Costs Prevented', 'Healthcare Savings', 'Other Economic Benefits'],
+                datasets: [{
+                    label: 'Economic Impact Breakdown',
+                    data: [30, 20, 25, 25],
+                    backgroundColor: ['#d93025', '#f0a500', '#4caf50', '#03a9f4'],
+                }]
+            },
+            options: {
+                responsive: true,
+            }
+        });
+
+        // Sentiment Chart
+        const ctxSentiment = document.getElementById('sentimentChart').getContext('2d');
+        const sentimentChart = new Chart(ctxSentiment, {
+            type: 'line',
+            data: {
+                labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+                datasets: [{
+                    label: 'Public Sentiment Score',
+                    data: [70, 75, 85, 90, 88, 92, 95],
+                    backgroundColor: 'rgba(217, 48, 37, 0.4)',
+                    borderColor: '#d93025',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Global Response Chart
+        const ctxGlobalResponse = document.getElementById('globalResponseChart').getContext('2d');
+        const globalResponseChart = new Chart(ctxGlobalResponse, {
+            type: 'bar',
+            data: {
+                labels: ['United States', 'China', 'European Union', 'Japan', 'India'],
+                datasets: [{
+                    label: 'Support Level (%)',
+                    data: [85, 80, 78, 82, 75],
+                    backgroundColor: ['#d93025', '#f0a500', '#4caf50', '#03a9f4', '#673ab7'],
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Technology Projection Chart
+        const ctxTechProjection = document.getElementById('techProjectionChart').getContext('2d');
+        const techProjectionChart = new Chart(ctxTechProjection, {
+            type: 'line',
+            data: {
+                labels: ['2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+                datasets: [{
+                    label: 'Technology Adoption Rate (%)',
+                    data: [5, 15, 30, 50, 65, 75, 85],
+                    backgroundColor: 'rgba(3, 169, 244, 0.4)',
+                    borderColor: '#03a9f4',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
