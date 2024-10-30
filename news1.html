@@ -11,8 +11,8 @@
     <!-- Internal CSS Styles -->
     <style>
         /* Base Styles */
-        
-         :root {
+
+        :root {
             --primary-color: #d93025;
             --secondary-color: #f0a500;
             --accent-color: #4caf50;
@@ -25,7 +25,7 @@
             --card-hover-shadow: rgba(0, 0, 0, 0.2) 0px 12px 24px;
             --transition-duration: 0.3s;
         }
-        
+
         body {
             font-family: var(--font-family);
             background-color: var(--background-color);
@@ -34,7 +34,7 @@
             margin: 0;
             padding: 0;
         }
-        
+
         header {
             background-color: var(--primary-color);
             color: white;
@@ -42,7 +42,7 @@
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
+
         nav {
             background-color: #333;
             color: white;
@@ -54,7 +54,7 @@
             top: 0;
             z-index: 1000;
         }
-        
+
         nav a {
             color: white;
             text-decoration: none;
@@ -62,33 +62,33 @@
             transition: color var(--transition-duration) ease;
             font-weight: bold;
         }
-        
+
         nav a:hover {
             color: var(--secondary-color);
         }
-        
+
         .breadcrumb {
             background-color: var(--light-gray);
             padding: 10px 20px;
             font-size: 0.9em;
         }
-        
+
         .breadcrumb a {
             color: var(--primary-color);
             text-decoration: none;
             margin-right: 5px;
         }
-        
+
         .breadcrumb a:hover {
             text-decoration: underline;
         }
-        
+
         .main-content {
             padding: 40px 20px;
             max-width: 1200px;
             margin: auto;
         }
-        
+
         .article {
             background-color: white;
             padding: 30px;
@@ -97,55 +97,55 @@
             border-radius: 8px;
             transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
         }
-        
+
         .article:hover {
             transform: translateY(-5px);
             box-shadow: var(--card-hover-shadow);
         }
-        
+
         .article img {
             max-width: 100%;
             height: auto;
             margin: 20px 0;
             border-radius: 5px;
         }
-        
+
         .article h2 {
             font-size: 2em;
             margin-bottom: 15px;
             color: var(--primary-color);
         }
-        
+
         .article p {
             font-size: 1.1em;
             line-height: 1.8;
             margin-bottom: 20px;
         }
-        
+
         .article .author {
             font-size: 0.9em;
             color: var(--dark-gray);
             margin-bottom: 20px;
         }
-        
+
         .social-sharing {
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
             justify-content: center;
         }
-        
+
         .social-sharing a {
             color: var(--primary-color);
             text-decoration: none;
             font-size: 1.5em;
             transition: color var(--transition-duration) ease;
         }
-        
+
         .social-sharing a:hover {
             color: var(--secondary-color);
         }
-        
+
         .chart-container {
             background-color: var(--light-gray);
             padding: 20px;
@@ -154,34 +154,23 @@
             text-align: center;
             border-radius: 5px;
         }
-        
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
-        }
-        
-        footer p {
-            margin: 5px 0;
-        }
-        
+
         .fade-in {
             animation: fadeIn 1.5s ease-in-out;
         }
-        
+
         @keyframes fadeIn {
             0% {
                 opacity: 0;
             }
+
             100% {
                 opacity: 1;
             }
         }
+
         /* New Styles for Recommended and Trending Sections */
-        
+
         .additional-content {
             display: flex;
             flex-direction: column;
@@ -190,8 +179,9 @@
             align-items: center;
             /* Center the sections */
         }
+
         /* Related Links Styling */
-        
+
         .related-links {
             width: 100%;
             max-width: 1200px;
@@ -199,7 +189,7 @@
             text-align: center;
             margin-bottom: 40px;
         }
-        
+
         .related-links h3 {
             color: var(--primary-color);
             margin-bottom: 20px;
@@ -209,7 +199,7 @@
             padding-bottom: 5px;
             text-align: center;
         }
-        
+
         .related-links ul {
             list-style: none;
             padding: 0;
@@ -218,13 +208,13 @@
             gap: 10px;
             align-items: center;
         }
-        
+
         .related-links li {
             width: 100%;
             margin-bottom: 10px;
             /* Added margin for better spacing */
         }
-        
+
         .related-links a {
             /* Removed background-color, padding, border-radius, and box-shadow */
             background-color: transparent;
@@ -243,7 +233,7 @@
             width: 100%;
             max-width: 800px;
         }
-        
+
         .related-links a:hover {
             /* Removed background-color and box-shadow on hover */
             background-color: transparent;
@@ -253,15 +243,16 @@
             color: var(--primary-color);
             /* Maintains color change on hover */
         }
+
         /* Recommended for You Section */
-        
+
         .recommended {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
-        
+
         .recommended h3 {
             color: var(--primary-color);
             margin-bottom: 20px;
@@ -271,7 +262,7 @@
             padding-bottom: 5px;
             text-align: center;
         }
-        
+
         .recommended .news-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -282,7 +273,7 @@
             justify-items: center;
             align-items: stretch;
         }
-        
+
         .recommended .card {
             background-color: var(--light-gray);
             padding: 15px;
@@ -295,12 +286,12 @@
             height: 100%;
             box-shadow: var(--card-shadow);
         }
-        
+
         .recommended .card:hover {
             transform: translateY(-5px);
             box-shadow: var(--card-hover-shadow);
         }
-        
+
         .recommended .card img {
             width: 100%;
             height: 150px;
@@ -308,7 +299,7 @@
             border-radius: 5px;
             margin-bottom: 10px;
         }
-        
+
         .recommended .card h4 {
             margin: 0;
             font-size: 1em;
@@ -319,25 +310,26 @@
             justify-content: center;
             padding: 0 10px;
         }
-        
+
         .recommended .card a {
             text-decoration: none;
             color: var(--text-color);
             transition: color var(--transition-duration) ease;
         }
-        
+
         .recommended .card a:hover {
             color: var(--primary-color);
         }
+
         /* Trending Videos for You Section */
-        
+
         .trending {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
-        
+
         .trending h3 {
             color: var(--primary-color);
             margin-bottom: 20px;
@@ -347,7 +339,7 @@
             padding-bottom: 5px;
             text-align: center;
         }
-        
+
         .trending .videos-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -355,7 +347,7 @@
             justify-items: center;
             align-items: stretch;
         }
-        
+
         .trending .video-card {
             background-color: var(--light-gray);
             padding: 10px;
@@ -367,19 +359,19 @@
             text-align: center;
             box-shadow: var(--card-shadow);
         }
-        
+
         .trending .video-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--card-hover-shadow);
         }
-        
+
         .trending .video-card img {
             width: 100%;
             height: 150px;
             object-fit: cover;
             border-radius: 5px;
         }
-        
+
         .trending .video-card .play-icon {
             position: absolute;
             top: 50%;
@@ -389,45 +381,110 @@
             color: rgba(255, 255, 255, 0.8);
             pointer-events: none;
         }
-        
+
         .trending .video-card h4 {
             margin-top: 10px;
             font-size: 1em;
             color: var(--text-color);
             padding: 0 10px;
         }
-        
+
         .trending .video-card a {
             text-decoration: none;
             color: inherit;
         }
+
         /* Responsive Adjustments */
-        
+
         @media (max-width: 1200px) {
             .recommended .news-grid,
             .trending .videos-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
-        
+
         @media (max-width: 992px) {
             .recommended .news-grid,
             .trending .videos-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
-        
+
         @media (max-width: 768px) {
             .recommended .news-grid,
             .trending .videos-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        
+
         @media (max-width: 576px) {
             .recommended .news-grid,
             .trending .videos-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer Styles */
+
+        footer {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            width: 16%;
+            padding: 10px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .footer-column ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        /* Responsive Footer Adjustments */
+
+        @media (max-width: 992px) {
+            .footer-column {
+                width: 48%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-column {
+                width: 100%;
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -448,10 +505,7 @@
         <a href="#">Local</a>
         <a href="#">Climate</a>
         <a href="#">World</a>
-        <a href="#">Canada</a>
         <a href="#">Politics</a>
-        <a href="#">Indigenous</a>
-        <a href="#">Business</a>
         <a href="#">Technology</a>
         <a href="#">Environment</a>
         <a href="#">Contact</a>
@@ -467,7 +521,7 @@
         <!-- Article Section -->
         <div class="article fade-in">
             <h2>BallBallKing: The Miracle Ball that Stunned the World</h2>
-            <p class="author">By: BallBallKing News&middot; Posted: Jan 25, 2024 8:00 AM GMT | Last Updated: January 25</p>
+            <p class="author">By: BallBallKing News· Posted: Jan 25, 2024 8:00 AM GMT | Last Updated: January 25</p>
             <img src="savetheworld.png" alt="BallBallKing saving lives">
             <p>In an unprecedented and awe-inspiring event, BallBallKing, the enigmatic and legendary spherical entity, has astonished the world by saving the entire city of Sparkleville from an impending natural catastrophe. This extraordinary display of
                 power—deemed as "technology far beyond human capabilities"—has ignited global debates, with many heralding it as the most remarkable invention of the century.</p>
@@ -599,27 +653,6 @@
                         <img src="recommended5.jpg" alt="Innovations Inspired by BallBallKing">
                         <h4><a href="#">Innovations Inspired by BallBallKing</a></h4>
                     </div>
-                    <!-- Row 2 -->
-                    <div class="card">
-                        <img src="recommended6.jpg" alt="BallBallKing and Renewable Energy">
-                        <h4><a href="#">BallBallKing and Renewable Energy</a></h4>
-                    </div>
-                    <div class="card">
-                        <img src="recommended7.jpg" alt="Community Resilience Post-BallBallKing">
-                        <h4><a href="#">Community Resilience Post-BallBallKing</a></h4>
-                    </div>
-                    <div class="card">
-                        <img src="recommended8.jpg" alt="BallBallKing’s Technological Breakthroughs">
-                        <h4><a href="#">BallBallKing’s Technological Breakthroughs</a></h4>
-                    </div>
-                    <div class="card">
-                        <img src="recommended9.jpg" alt="Future Prospects for BallBallKing">
-                        <h4><a href="#">Future Prospects for BallBallKing</a></h4>
-                    </div>
-                    <div class="card">
-                        <img src="recommended10.jpg" alt="Global Collaboration Initiatives">
-                        <h4><a href="#">Global Collaboration Initiatives</a></h4>
-                    </div>
                 </div>
             </div>
 
@@ -669,9 +702,79 @@
     </div>
 
     <!-- Footer Section -->
-    <footer class="fade-in">
-        <p>&copy; 2024 BallBallKing Media. All Rights Reserved.</p>
-        <p>BallBallKing News - Reliable, Real, Informed.</p>
+    <footer>
+        <div class="footer-column">
+            <h3>Connect with BallBallKing</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">X</a></li>
+                <li><a href="#">YouTube</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Mobile</a></li>
+                <li><a href="#">RSS</a></li>
+                <li><a href="#">Podcasts</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Contact BallBallKing</h3>
+            <ul>
+                <li><a href="#">Submit Feedback</a></li>
+                <li><a href="#">Help Centre</a></li>
+                <li>Audience Relations, BallBallKing<br>
+                    P.O. Box 500 Station A<br>
+                    Toronto, ON<br>
+                    Canada, M5W 1E6
+                </li>
+                <li>Toll-free (Canada only):<br>1-866-306-4636</li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>About BallBallKing</h3>
+            <ul>
+                <li><a href="#">Corporate Info</a></li>
+                <li><a href="#">Sitemap</a></li>
+                <li><a href="#">Reuse & Permission</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Privacy Preferences</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Our Unions</a></li>
+                <li><a href="#">Independent Producers</a></li>
+                <li><a href="#">Political Ads Registry</a></li>
+                <li><a href="#">AdChoices</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Ombudsman</a></li>
+                <li><a href="#">Corrections and Clarifications</a></li>
+                <li><a href="#">Public Appearances</a></li>
+                <li><a href="#">Commercial Services</a></li>
+                <li><a href="#">BallBallKing Shop</a></li>
+                <li><a href="#">Doing Business with Us</a></li>
+                <li><a href="#">Renting Facilities</a></li>
+                <li><a href="#">Radio Canada International</a></li>
+                <li><a href="#">BallBallKing Lite</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Accessibility</h3>
+            <p>This is the insane ball that saves the world and is insanely strong. It is the son of the sun.</p>
+            <p>Closed Captioning and Described Video is available for many BallBallKing shows offered on <a href="#">BallBallKing Gem</a>.</p>
+            <ul>
+                <li><a href="#">About BallBallKing Accessibility</a></li>
+                <li><a href="#">Accessibility Feedback</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2024 BallBallKing. All rights reserved. Visitez <a href="#">BallBallKing.ca</a>
+        </div>
     </footer>
 
     <!-- Chart.js Scripts -->
