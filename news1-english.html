@@ -11,8 +11,8 @@
     <!-- Internal CSS Styles -->
     <style>
         /* Base Styles */
-
-        :root {
+        
+         :root {
             --primary-color: #d93025;
             --secondary-color: #f0a500;
             --accent-color: #4caf50;
@@ -24,8 +24,9 @@
             --card-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px;
             --card-hover-shadow: rgba(0, 0, 0, 0.2) 0px 12px 24px;
             --transition-duration: 0.3s;
+            --heading-font-size: 1.2em;
         }
-
+        
         body {
             font-family: var(--font-family);
             background-color: var(--background-color);
@@ -34,61 +35,91 @@
             margin: 0;
             padding: 0;
         }
-
+        
         header {
             background-color: var(--primary-color);
             color: white;
             padding: 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
-
+        /* Navigation Bar Styles */
+        
         nav {
             background-color: #333;
             color: white;
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 20px;
             padding: 10px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
-
+        
         nav a {
             color: white;
             text-decoration: none;
             padding: 8px 16px;
-            transition: color var(--transition-duration) ease;
+            transition: color var(--transition-duration) ease, background-color var(--transition-duration) ease;
             font-weight: bold;
+            border-radius: 4px;
         }
-
+        
         nav a:hover {
-            color: var(--secondary-color);
+            color: var(--background-color);
+            background-color: var(--secondary-color);
         }
-
+        /* Language Switch Button Styles in Navigation */
+        
+        .language-button {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease, border-color var(--transition-duration) ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 20px;
+        }
+        
+        .language-button:hover {
+            background-color: white;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .language-button i {
+            font-size: 1em;
+        }
+        
         .breadcrumb {
             background-color: var(--light-gray);
             padding: 10px 20px;
             font-size: 0.9em;
         }
-
+        
         .breadcrumb a {
             color: var(--primary-color);
             text-decoration: none;
             margin-right: 5px;
         }
-
+        
         .breadcrumb a:hover {
             text-decoration: underline;
         }
-
+        
         .main-content {
             padding: 40px 20px;
             max-width: 1200px;
             margin: auto;
         }
-
+        
         .article {
             background-color: white;
             padding: 30px;
@@ -97,55 +128,55 @@
             border-radius: 8px;
             transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
         }
-
+        
         .article:hover {
             transform: translateY(-5px);
             box-shadow: var(--card-hover-shadow);
         }
-
+        
         .article img {
             max-width: 100%;
             height: auto;
             margin: 20px 0;
             border-radius: 5px;
         }
-
+        
         .article h2 {
             font-size: 2em;
             margin-bottom: 15px;
             color: var(--primary-color);
         }
-
+        
         .article p {
             font-size: 1.1em;
             line-height: 1.8;
             margin-bottom: 20px;
         }
-
+        
         .article .author {
             font-size: 0.9em;
             color: var(--dark-gray);
             margin-bottom: 20px;
         }
-
+        
         .social-sharing {
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
             justify-content: center;
         }
-
+        
         .social-sharing a {
             color: var(--primary-color);
             text-decoration: none;
             font-size: 1.5em;
             transition: color var(--transition-duration) ease;
         }
-
+        
         .social-sharing a:hover {
             color: var(--secondary-color);
         }
-
+        
         .chart-container {
             background-color: var(--light-gray);
             padding: 20px;
@@ -154,42 +185,39 @@
             text-align: center;
             border-radius: 5px;
         }
-
+        
         .fade-in {
             animation: fadeIn 1.5s ease-in-out;
         }
-
+        
         @keyframes fadeIn {
             0% {
                 opacity: 0;
             }
-
             100% {
                 opacity: 1;
             }
         }
-
         /* New Styles for Recommended and Trending Sections */
-
+        
         .additional-content {
             display: flex;
             flex-direction: column;
             gap: 60px;
             margin-top: 60px;
             align-items: center;
-            /* Center the sections */
         }
-
         /* Related Links Styling */
-
+        
         .related-links {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
             margin-bottom: 40px;
+            position: relative;
         }
-
+        
         .related-links h3 {
             color: var(--primary-color);
             margin-bottom: 20px;
@@ -199,7 +227,7 @@
             padding-bottom: 5px;
             text-align: center;
         }
-
+        
         .related-links ul {
             list-style: none;
             padding: 0;
@@ -208,51 +236,42 @@
             gap: 10px;
             align-items: center;
         }
-
+        
         .related-links li {
             width: 100%;
             margin-bottom: 10px;
-            /* Added margin for better spacing */
+            text-align: left;
+            max-width: 800px;
+            padding-left: 20px;
         }
-
+        
         .related-links a {
-            /* Removed background-color, padding, border-radius, and box-shadow */
             background-color: transparent;
-            /* Makes background transparent */
             padding: 8px 16px;
-            /* Adjusted padding for better spacing */
             border-radius: 0;
-            /* Removes border radius */
             box-shadow: none;
-            /* Removes box shadow */
             text-decoration: none;
             color: var(--text-color);
             transition: color var(--transition-duration) ease;
             font-size: 1.1em;
             display: block;
             width: 100%;
-            max-width: 800px;
         }
-
+        
         .related-links a:hover {
-            /* Removed background-color and box-shadow on hover */
             background-color: transparent;
-            /* Keeps background transparent on hover */
             box-shadow: none;
-            /* Ensures no shadow on hover */
             color: var(--primary-color);
-            /* Maintains color change on hover */
         }
-
         /* Recommended for You Section */
-
+        
         .recommended {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
-
+        
         .recommended h3 {
             color: var(--primary-color);
             margin-bottom: 20px;
@@ -262,18 +281,16 @@
             padding-bottom: 5px;
             text-align: center;
         }
-
+        
         .recommended .news-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             row-gap: 40px;
-            /* Increased row-gap for better vertical spacing */
             column-gap: 20px;
-            /* Maintained column-gap */
             justify-items: center;
             align-items: stretch;
         }
-
+        
         .recommended .card {
             background-color: var(--light-gray);
             padding: 15px;
@@ -286,12 +303,12 @@
             height: 100%;
             box-shadow: var(--card-shadow);
         }
-
+        
         .recommended .card:hover {
             transform: translateY(-5px);
             box-shadow: var(--card-hover-shadow);
         }
-
+        
         .recommended .card img {
             width: 100%;
             height: 150px;
@@ -299,10 +316,10 @@
             border-radius: 5px;
             margin-bottom: 10px;
         }
-
+        
         .recommended .card h4 {
             margin: 0;
-            font-size: 1em;
+            font-size: var(--heading-font-size);
             color: var(--text-color);
             flex-grow: 1;
             display: flex;
@@ -310,26 +327,25 @@
             justify-content: center;
             padding: 0 10px;
         }
-
+        
         .recommended .card a {
             text-decoration: none;
             color: var(--text-color);
             transition: color var(--transition-duration) ease;
         }
-
+        
         .recommended .card a:hover {
             color: var(--primary-color);
         }
-
         /* Trending Videos for You Section */
-
+        
         .trending {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
-
+        
         .trending h3 {
             color: var(--primary-color);
             margin-bottom: 20px;
@@ -339,15 +355,19 @@
             padding-bottom: 5px;
             text-align: center;
         }
-
+        
         .trending .videos-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            grid-gap: 20px;
+            /* Ensure there are 5 equal columns */
+            gap: 20px;
+            /* Keep consistent spacing between items */
             justify-items: center;
+            /* Center the items within each grid cell */
             align-items: stretch;
+            /* Make sure all items have the same height */
         }
-
+        
         .trending .video-card {
             background-color: var(--light-gray);
             padding: 10px;
@@ -358,74 +378,105 @@
             cursor: pointer;
             text-align: center;
             box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 300px;
+            /* Fixed height for consistency */
+            width: 100%;
+            /* Ensure the card takes up full width of the column */
         }
-
+        
         .trending .video-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--card-hover-shadow);
         }
-
+        
         .trending .video-card img {
             width: 100%;
-            height: 150px;
+            height: 180px;
             object-fit: cover;
             border-radius: 5px;
         }
-
+        
         .trending .video-card .play-icon {
             position: absolute;
-            top: 50%;
+            top: calc(10px + 90px);
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 3em;
             color: rgba(255, 255, 255, 0.8);
             pointer-events: none;
         }
-
+        
         .trending .video-card h4 {
             margin-top: 10px;
-            font-size: 1em;
+            font-size: var(--heading-font-size);
             color: var(--text-color);
             padding: 0 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            text-align: center;
         }
-
+        
         .trending .video-card a {
             text-decoration: none;
             color: inherit;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
         /* Responsive Adjustments */
-
+        
         @media (max-width: 1200px) {
             .recommended .news-grid,
             .trending .videos-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
         }
-
+        
         @media (max-width: 992px) {
             .recommended .news-grid,
             .trending .videos-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            nav {
+                flex-wrap: wrap;
+            }
+            .language-button {
+                margin-left: 10px;
+            }
+            .related-links ul {
+                padding-left: 0;
+            }
+            .related-links li {
+                padding-left: 0;
             }
         }
-
+        
         @media (max-width: 768px) {
             .recommended .news-grid,
             .trending .videos-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
         }
-
+        
         @media (max-width: 576px) {
             .recommended .news-grid,
             .trending .videos-grid {
                 grid-template-columns: 1fr;
             }
         }
-
         /* Footer Styles */
-
+        
         footer {
             background-color: #f4f4f4;
             padding: 20px;
@@ -434,36 +485,36 @@
             flex-wrap: wrap;
             justify-content: space-between;
         }
-
+        
         .footer-column {
             width: 16%;
             padding: 10px;
         }
-
+        
         .footer-column h3 {
             font-size: 1.1em;
             margin-bottom: 15px;
             font-weight: bold;
         }
-
+        
         .footer-column ul {
             list-style-type: none;
             padding: 0;
         }
-
+        
         .footer-column ul li {
             margin-bottom: 10px;
         }
-
+        
         .footer-column ul li a {
             text-decoration: none;
             color: #0066cc;
         }
-
+        
         .footer-column ul li a:hover {
             text-decoration: underline;
         }
-
+        
         .footer-bottom {
             width: 100%;
             text-align: center;
@@ -471,16 +522,15 @@
             font-size: 0.9em;
             color: #777;
         }
-
         /* Responsive Footer Adjustments */
-
+        
         @media (max-width: 992px) {
             .footer-column {
                 width: 48%;
                 margin-bottom: 20px;
             }
         }
-
+        
         @media (max-width: 576px) {
             .footer-column {
                 width: 100%;
@@ -509,6 +559,11 @@
         <a href="#">Technology</a>
         <a href="#">Environment</a>
         <a href="#">Contact</a>
+
+        <!-- Translation Button -->
+        <a href="https://wongtrevor.github.io/BallBallKingNews-Chinese/news1-chinese.html" class="language-button">
+            <i class="fas fa-globe"></i> 中文
+        </a>
     </nav>
 
     <!-- Breadcrumb Navigation -->
@@ -521,7 +576,7 @@
         <!-- Article Section -->
         <div class="article fade-in">
             <h2>BallBallKing: The Miracle Ball that Stunned the World</h2>
-            <p class="author">By: BallBallKing News· Posted: Jan 25, 2024 8:00 AM GMT | Last Updated: January 25</p>
+            <p class="author">By: BallBallKing News&middot; Posted: Jan 25, 2024 8:00 AM GMT | Last Updated: January 25</p>
             <img src="savetheworld.png" alt="BallBallKing saving lives">
             <p>In an unprecedented and awe-inspiring event, BallBallKing, the enigmatic and legendary spherical entity, has astonished the world by saving the entire city of Sparkleville from an impending natural catastrophe. This extraordinary display of
                 power—deemed as "technology far beyond human capabilities"—has ignited global debates, with many heralding it as the most remarkable invention of the century.</p>
@@ -702,7 +757,7 @@
     </div>
 
     <!-- Footer Section -->
-    <footer>
+    <footer class="fade-in">
         <div class="footer-column">
             <h3>Connect with BallBallKing</h3>
             <ul>
@@ -721,10 +776,7 @@
             <ul>
                 <li><a href="#">Submit Feedback</a></li>
                 <li><a href="#">Help Centre</a></li>
-                <li>Audience Relations, BallBallKing<br>
-                    P.O. Box 500 Station A<br>
-                    Toronto, ON<br>
-                    Canada, M5W 1E6
+                <li>Audience Relations, BallBallKing<br> P.O. Box 500 Station A<br> Toronto, ON<br> Canada, M5W 1E6
                 </li>
                 <li>Toll-free (Canada only):<br>1-866-306-4636</li>
             </ul>
@@ -773,7 +825,7 @@
         </div>
 
         <div class="footer-bottom">
-            &copy; 2024 BallBallKing. All rights reserved. Visitez <a href="#">BallBallKing.ca</a>
+            &copy; 2024 BallBallKing Media. All Rights Reserved. Visitez <a href="#">Radio-Canada.ca</a>
         </div>
     </footer>
 
